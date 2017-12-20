@@ -139,56 +139,6 @@
       <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
         <div class="box box-solid">
           <div class="box-header with-border">
-            <i class="fa fa-exchange"></i>
-            <h3 class="box-title">Consumo de Gigabyte por Transporte</h3>
-          </div>
-          <div class="box-body">
-            <div class="table-reponsive">
-              <table id="example1" name='example1' class="display nowrap table table-bordered table-hover" cellspacing="0" width="95%">
-                <input type='hidden' id='_tokenb' name='_tokenb' value='{!! csrf_token() !!}'>
-                <thead >
-                  <tr class="bg-primary" style="background: #00A5BA;">
-                    <th> <small>Transporte</small> </th>
-                    @for ($i = 1; $i <= 30; $i++)
-                    <th> <small> {{ $i }} </small> </th>
-                    @endfor
-                    <th> <small >Total</small> </th>
-                  </tr>
-                </thead>
-                <tbody style="background: #FFFFFF;">
-                </tbody>
-                <tfoot id='tfoot_average'>
-                  <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-        <div class="box box-solid">
-          <div class="box-header with-border">
             <i class="fa fa-signal"></i>
             <h3 class="box-title">Consumo - Diario</h3>
           </div>
@@ -221,6 +171,99 @@
           </div>
         </div>
       </div>
+
+      <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <i class="fa fa-exchange"></i>
+            <h3 class="box-title">Consumo de Subida - Gigabyte por Transporte</h3>
+          </div>
+          <div class="box-body">
+            <div class="row">
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <label for="date_search_up_for_month" class="col-xs-3 control-label">Fecha:</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control datepickermonth" id="date_search_up_for_month" placeholder="2017-12">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-8">
+                      <button type="button" class="btn btn-info btnconsumptionup"><i class="fa fa-bullseye margin-r5"></i> Generar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="table-responsive">
+                  <table class="table" id="example_up" name='example_up' class="hover" width="100%" cellspacing="0">
+                    <thead>
+                        <tr class="bg-primary" style="background: #F0AD4E; font-size: 11.5px; ">
+                            <th> <small>Transporte</small> </th>
+                            @for ($i = 1; $i <= 31; $i++)
+                            <th> <small> {{ $i }} </small> </th>
+                            @endfor
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div><!----->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <i class="fa fa-exchange"></i>
+            <h3 class="box-title">Consumo de Bajada - Gigabyte por Transporte</h3>
+          </div>
+          <div class="box-body">
+            <div class="row">
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <label for="date_search_down_for_month" class="col-xs-3 control-label">Fecha:</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control datepickermonth" id="date_search_down_for_month" placeholder="2017-12">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-8">
+                      <button type="button" class="btn btn-info btnconsumptiondown"><i class="fa fa-bullseye margin-r5"></i> Generar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="table-responsive">
+                  <table id="example_down" name='example_down' class="display nowrap table table-bordered table-hover" width="100%" cellspacing="0">
+                    <thead>
+                        <tr class="bg-primary" style="background: #F0AD4E; font-size: 11.5px; ">
+                            <th> <small>Transporte</small> </th>
+                            @for ($i = 1; $i <= 31; $i++)
+                            <th> <small> {{ $i }} </small> </th>
+                            @endfor
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
 
     </div>
 </div>

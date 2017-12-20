@@ -937,6 +937,7 @@ var Configuration_table_one= {
   Filter: false,
   searching: false,
   bInfo: false,
+  "processing": true,
   "columnDefs": [
         { //Subida 1
             "targets": [3],
@@ -1038,4 +1039,51 @@ var Configuration_table_one= {
                       nCells[2].innerHTML = 0;
                     }
     }
+};
+
+
+var Configuration_table_responsive= {
+  dom: "<'row'<'col-sm-4'B><'col-sm-4'l><'col-sm-4'f>>" +
+          "<'row'<'col-sm-12'tr>>" +
+          "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+    buttons: [
+      {
+        extend: 'excelHtml5',
+        text: '<i class="fa fa-file-excel-o"></i> Extraer a Excel',
+        titleAttr: 'Excel',
+        className: 'btn btn-info custombtntable',
+      },
+      {
+        extend: 'csvHtml5',
+        text: '<i class="fa fa-file-text-o"></i> Extraer a CSV',
+        titleAttr: 'CSV',
+        className: 'btn btn-danger',
+      }
+  ],
+  "processing": true,
+
+  language:{
+    "sProcessing":     "Procesando...",
+    "sLengthMenu":     "Mostrar _MENU_ registros",
+    "sZeroRecords":    "No se encontraron resultados",
+    "sEmptyTable":     "Ningún dato disponible",
+    "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+    "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+    "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+    "sInfoPostFix":    "",
+    "sSearch":         "<i class='fa fa-search'></i> Buscar:",
+    "sUrl":            "",
+    "sInfoThousands":  ",",
+    "sLoadingRecords": "Cargando...",
+    "oPaginate": {
+      "sFirst":    "Primero",
+      "sLast":     "Último",
+      "sNext":     "Siguiente",
+      "sPrevious": "Anterior"
+    },
+    "oAria": {
+      "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+      "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+    }
+  }
 };

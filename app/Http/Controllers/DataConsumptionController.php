@@ -71,6 +71,24 @@ class DataConsumptionController extends Controller
       $resultados = DB::connection('autobuses')->select('CALL GetTop10ConsumoDiario(?)', array($date_complete));
       return json_encode($resultados);
     }
+    public function show_month_up(Request $request)
+    {
+      $date_complete= $request->data;
+      $array = explode("-", $date_complete);
+      $extraer_year = $array[0];
+      $extraer_mes = $array[1];
+      $resultados = DB::connection('autobuses')->select('CALL TablaConsumoDown(?,?)', array($extraer_year,$extraer_mes));
+      return json_encode($resultados);
+    }
+    public function show_month_down(Request $request)
+    {
+      $date_complete= $request->data;
+      $array = explode("-", $date_complete);
+      $extraer_year = $array[0];
+      $extraer_mes = $array[1];
+      $resultados = DB::connection('autobuses')->select('CALL TablaConsumoDown(?,?)', array($extraer_year,$extraer_mes));
+      return json_encode($resultados);
+    }
 
 
     /**

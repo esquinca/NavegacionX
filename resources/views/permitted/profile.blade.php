@@ -91,39 +91,42 @@
         <div class="tab-content">
           <div class="active tab-pane" id="settings">
             <form class="form-horizontal">
+              {{ csrf_field() }}
+              <!-- {{ method_field('PUT') }} -->
+
               <div class="form-group">
                 <label for="inputName" class="col-sm-2 control-label">{{ trans('auth.nombre') }}</label>
 
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputName" placeholder="Name">
+                  <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Name" value="{{ old('name')}}">
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{ auth()->user()->email }}" disabled>
+                  <input type="text" class="form-control" id="inputEmail" placeholder="Email" value="{{ auth()->user()->email }}" disabled>
                 </div>
               </div>
               <div class="form-group">
                 <label for="city" class="col-sm-2 control-label">{{ trans('auth.location') }}</label>
 
                 <div class="col-sm-10">
-                   <input type="text" name="city" placeholder="City" class="form-control" value="{{ old('city') }}" id="city">
+                   <input type="text" name="city" placeholder="City" class="form-control" value="{{ old('city,  auth()->user()->city') }}" id="city">
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="password" class="col-sm-2 control-label">{{ trans('auth.password') }}</label>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="password" placeholder="Password">
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="password_confirmation" class="col-sm-2 control-label">{{ trans('auth.retrypepassword') }}</label>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="password_confirmation" placeholder="Password">
+                  <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password">
                 </div>
               </div>
 

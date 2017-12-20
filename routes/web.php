@@ -32,3 +32,8 @@ Route::post('/data_domains', 'SurveyController@show_domains');
 Route::post('/data_consumption_unity', 'DataConsumptionController@show');
 Route::post('/data_consumption_top_month', 'DataConsumptionController@show_top');
 Route::post('/data_consumption_day_all', 'DataConsumptionController@show_day');
+
+Route::post('/data_consumption_up_month', 'DataConsumptionController@show_month_up');
+Route::post('/data_consumption_down_month', 'DataConsumptionController@show_month_down');
+
+Route::post('/profile_up', 'ProfileController@update');
