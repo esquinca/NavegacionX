@@ -38,3 +38,5 @@ Route::post('/data_consumption_down_month', 'DataConsumptionController@show_mont
 
 Route::post('/profile_up', 'ProfileController@update');
 Route::post('/profile_up_pass', 'ProfileController@updatepass');
+
+Route::get('/geoLoc', 'GeoLocationController@xmlProc');
