@@ -83,6 +83,39 @@ function validarSelect(campo) {
     }
   };
 }
+
+function validarconsidencias (campoa, campob){
+  var var_length_a = $('#password').val();
+  var var_length_b = $('#password_confirmation').val();
+
+  var validad_a = false;
+  var validad_b = false;
+  var validad_c = false;
+
+  if (var_length_a.length >= 6) {
+    validad_a = true;
+    //console.error('cumple password');
+  }
+  if (var_length_b.length >= 6) {
+    validad_b = true;
+    //console.error('cumple retry password');
+  }
+  if (validad_a == true &&  validad_b == true) {
+      if( var_length_a === var_length_b ){
+        //console.error('cumple ');
+        return true;
+      }
+      else {
+        //console.error('nocumple intert');
+        return false;
+      }
+  }
+  else {
+    //console.error('nocumple 1');
+    return false;
+  }
+}
+
 function graph_barras(title, campoa, campob) {
   var myChart = echarts.init(document.getElementById(title));
   var option = {

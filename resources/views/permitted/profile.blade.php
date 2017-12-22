@@ -87,16 +87,15 @@
       <div class="nav-tabs-custom">
         <ul class="nav nav-tabs">
           <li class="active"><a href="#settings" data-toggle="tab">{{ trans('auth.editar') }}</a></li>
+          <li><a href="#settings2" data-toggle="tab">Actualizar Contraseña</a></li>
         </ul>
         <div class="tab-content">
           <div class="active tab-pane" id="settings">
-            <form class="form-horizontal">
+            <form class="form-horizontal formprofile" method="POST" action="/profile_up" accept-charset="UTF-8">
               {{ csrf_field() }}
-              <!-- {{ method_field('PUT') }} -->
 
               <div class="form-group">
                 <label for="inputName" class="col-sm-2 control-label">{{ trans('auth.nombre') }}</label>
-
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Name" value="{{ old('name')}}">
                 </div>
@@ -116,6 +115,27 @@
                 </div>
               </div>
 
+              <div class="alert alert-info alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4><i class="icon fa fa-info"></i> Puntos que debe de tomar en cuenta!</h4>
+                <ol>
+                  <li> La cantidad de caracteres de la contraseña debe de ser igual o mayor que 6. </li>
+                  <li> La contraseña y la confirmación deben de ser iguales. </li>
+                  <li> En caso que desee cambiar el nombre o la localizacion basta con llenar el campo deseado.</li>
+                </ol>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="button" class="btn bg-olive btneditprof"><i class="fa fa-pencil-square margin-r-5"></i>Click Actualizar información</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- /.tab-pane -->
+          <div class="tab-pane" id="settings2">
+            <form class="form-horizontal formprofiletwo" method="POST" action="/profile_up_pass" accept-charset="UTF-8">
+              {{ csrf_field() }}
               <div class="form-group">
                 <label for="password" class="col-sm-2 control-label">{{ trans('auth.password') }}</label>
                 <div class="col-sm-10">
@@ -132,12 +152,13 @@
 
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn bg-olive"><i class="fa fa-pencil-square margin-r-5"></i>Actualizar información</button>
+                  <button type="button" class="btn btn-danger btneditprofpass"><i class="fa fa-key"></i>Click Actualizar Contraseña</button>
                 </div>
               </div>
             </form>
           </div>
           <!-- /.tab-pane -->
+
         </div>
         <!-- /.tab-content -->
       </div>
