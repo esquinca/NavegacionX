@@ -25,53 +25,8 @@
 @endsection
 
 @section('content')
-
-<div class="container">
-    <div class="row">
-
-      <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-        <div class="box box-solid">
-          <div class="box-body">
-            <h4 style="background-color:#f7f7f7; font-size: 18px; text-align: center; padding: 7px 10px; margin-top: 0;">
-                Ubicación de autobuses en tiempo real.
-            </h4>
-            <div class="media">
-                <div class="media-body">
-                  <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" align="right">
-
-                      <button class="btn btn-info btnconsumptionunity" id="btn-refresh" type="button" style="opacity: 0.5;">
-                        <i class="fa fa-refresh margin-r5"></i>
-                        Reload
-                      </button>
-
-                    </div>
-
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                      <div class="clearfix">
-                        <div id="googlemap" style="height: 400px; width: 100%;">
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 @endsection
 
 @push('scripts')
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD07V9hwyUjrRCXiJHo9YdftE0VJIbRP8">
-</script>
-<script src="/plugins/momentupdate/moment-with-locales.js"></script>
 <script src="{{ asset('js/admin/geolocation.js')}}"></script>
 @endpush
