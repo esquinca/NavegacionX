@@ -29,15 +29,20 @@ class UsersTableSeeder extends Seeder
 
       //Creamos los permisos predeterminados
          $viewdashboardpral = Permission::create(['name' => 'View dashboard pral']);
-         $viewdashboardpral = Permission::create(['name' => 'View geolocation']);
-         $viewdashboardpral = Permission::create(['name' => 'View consumption']);
-         $viewdashboardpral = Permission::create(['name' => 'View survey']);
-         $viewdashboardpral = Permission::create(['name' => 'Edit Configuration']);
-         $viewdashboardpral = Permission::create(['name' => 'View Configuration']);
+         $viewgeolocation = Permission::create(['name' => 'View geolocation']);
+         $viewconsumption = Permission::create(['name' => 'View consumption']);
+         $viewsurvey = Permission::create(['name' => 'View survey']);
+         $vieweditconfiguration = Permission::create(['name' => 'Edit Configuration']);
+         $viewconfiguration = Permission::create(['name' => 'View Configuration']);
 
       //Asignamos el permiso view dashboard pral al role SuperAdmin
          $role = Role::findByName('SuperAdmin');
          $role->givePermissionTo('View dashboard pral');
+         $role->givePermissionTo('View geolocation');
+         $role->givePermissionTo('View consumption');
+         $role->givePermissionTo('View survey');
+         $role->givePermissionTo('Edit Configuration');
+         $role->givePermissionTo('View Configuration');
 
       //Creamos los usuarios super admin
       $super_admin_a = new User;
@@ -107,6 +112,8 @@ class UsersTableSeeder extends Seeder
       $menuAdminB->icons='fa fa-map-marker';
       $menuAdminB->save();
       $assigned_menu_b = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id ,'menu_id' => $menuAdminB->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+      $assigned_menu_b1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id ,'menu_id' => $menuAdminB->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+      $assigned_menu_b2 = DB::table('menu_user')->insert(['user_id' => $super_admin_c->id ,'menu_id' => $menuAdminB->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
 
       $menuAdminC = new Menu;
       $menuAdminC->name='data_consumption';
@@ -116,6 +123,7 @@ class UsersTableSeeder extends Seeder
       $menuAdminC->icons='fa fa-exchange';
       $menuAdminC->save();
       $assigned_menu_c = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminC->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+      $assigned_menu_c1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id,'menu_id' => $menuAdminC->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
       $assigned_menu_c2 = DB::table('menu_user')->insert(['user_id' => $super_admin_c->id,'menu_id' => $menuAdminC->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
 
       $menuAdminD = new Menu;
@@ -126,6 +134,7 @@ class UsersTableSeeder extends Seeder
       $menuAdminD->icons='fa fa-folder';
       $menuAdminD->save();
       $assigned_menu_d = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminD->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+      $assigned_menu_d1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id,'menu_id' => $menuAdminD->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
 
       $menuAdminE = new Menu;
       $menuAdminE->name='profile';
@@ -134,7 +143,7 @@ class UsersTableSeeder extends Seeder
       $menuAdminE->url='profile';
       $menuAdminE->icons='fa fa-user';
       $menuAdminE->save();
-      $assigned_menu_e = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminE->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+      // $assigned_menu_e = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminE->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
 
       $menuAdminF = new Menu;
       $menuAdminF->name='Configuration';
@@ -144,6 +153,7 @@ class UsersTableSeeder extends Seeder
       $menuAdminF->icons='fa fa-cog';
       $menuAdminF->save();
       $assigned_menu_f = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminF->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+      $assigned_menu_f1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id,'menu_id' => $menuAdminF->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
 
 
     }

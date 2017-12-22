@@ -27,7 +27,7 @@
 @section('content')
   @hasanyrole('SuperAdmin|Admin')
    <!--¡Soy escritor o administrador o ambos!-->
-    @if( auth()->user()->can('View dashboard pral') )
+    @if( auth()->user()->can('View survey') )
       <!--SI VER-->
       <div class="container">
           <div class="row">
@@ -154,11 +154,11 @@
       </div>
     @else
       <!--NO VER-->
-      @include('default.session')
+      @include('default.denied')
     @endif
   @else
    <!--¡No tengo el role de SuperAdmin ó Admin!-->
-   @include('default.session')
+   @include('default.denied')
   @endhasanyrole
 @endsection
 

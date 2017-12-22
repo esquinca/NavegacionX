@@ -49,7 +49,7 @@ function current_page($url = '/'){
             <li><a href="home"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
         @foreach (auth()->user()->menus as $menu)
             @if ($menu->name === 'Configuration')
-            <li class="active treeview">
+            <li class="treeview">
               <a href="{{ $menu->url }}">
                 <i class="{{ $menu->icons }}"></i> <span>{{ $menu->display_name }}</span>
                 <span class="pull-right-container">
@@ -68,6 +68,7 @@ function current_page($url = '/'){
               <li><a href="{{ $menu->url }}"><i class="{{ $menu->icons }}"></i> <span>{{ $menu->display_name }}</span></a></li>
             @endif
         @endforeach
+          <li><a href="profile"><i class="fa fa fa-user"></i> <span>Perfil</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>
