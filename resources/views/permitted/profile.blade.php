@@ -76,7 +76,7 @@
           <hr>
 
           <strong><i class="fa fa-map-marker margin-r-5"></i> {{ trans('auth.location') }}</strong>
-          <p class="text-muted">{{ auth()->user()->location }}</p>
+          <p class="text-muted">{{ auth()->user()->city }}</p>
         </div>
         <!-- /.box-body -->
       </div>
@@ -162,8 +162,15 @@
         </div>
         <!-- /.tab-content -->
       </div>
-
     </div>
+    <div class="col-md-8 col-xs-12">
+      @if (session('status'))
+          <div class="alert alert-success">
+              {{ session('status') }}
+          </div>
+      @endif
+    </div>
+
   </div>
 </section>
 @endsection

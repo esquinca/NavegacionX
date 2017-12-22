@@ -11,15 +11,15 @@ $(".btneditprof").on("click", function () {
     menssage_toast('Mensaje', '3', 'Sin cambios' , '3000');
   }
   if (name.length >= 1 && location.length < 1)  {
-    menssage_toast('Mensaje', '4', 'Cambio de nombre' , '3000');
+    //menssage_toast('Mensaje', '4', 'Cambio de nombre' , '3000');
     $('.formprofile').submit();
   }
   if (name.length < 1 && location.length >= 1)  {
-    menssage_toast('Mensaje', '4', 'Cambio de location' , '3000');
+    //menssage_toast('Mensaje', '4', 'Cambio de location' , '3000');
     $('.formprofile').submit();
   }
   if (name.length >= 1 && location.length >= 1)  {
-    menssage_toast('Mensaje', '4', 'Cambio de nombre && location' , '3000');
+    //menssage_toast('Mensaje', '4', 'Cambio de nombre && location' , '3000');
     $('.formprofile').submit();
   }
 });
