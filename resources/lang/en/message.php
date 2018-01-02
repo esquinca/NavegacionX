@@ -27,5 +27,16 @@ return [
     'error500title'=>'500 Error Page',
     'content500title' => 'Oops! Something went wrong.',
     'content500text' => 'We will work on fixing that right away. Meanwhile, you may',
-
+    'editusers' => 'Modificar Usuario',
+    'creatusers' => 'Crear Usuario',
+    'confMenu' => 'Configuración Menu',
+    'actualizar'=> 'Actualizar',
+    'ccmodal'=> 'Cerrar',
+    'role'=> 'Role',
+    'create' => 'Crear',
+    'selectopt'=> 'Elije',
+    'confirmacion' => 'Confirmation',
+    'preguntaconf' => '¿Are you sure you want to continue?',
+    'eliminar' => 'Remove',
+    'deniedpermission' => 'You do not have permission to access this module, please refer to your system administrator!',
 ];

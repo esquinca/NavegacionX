@@ -48,25 +48,7 @@ function current_page($url = '/'){
       <li class="header">HEADER</li>
             <li><a href="home"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
         @foreach (auth()->user()->menus as $menu)
-            @if ($menu->name === 'Configuration')
-            <li class="treeview">
-              <a href="{{ $menu->url }}">
-                <i class="{{ $menu->icons }}"></i> <span>{{ $menu->display_name }}</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{ $menu->url }}"><i class="fa fa-circle-o"></i>Resumen</a></li>
-                <li><a href="{{ $menu->url }}a"><i class="fa fa-circle-o"></i> {{ $menu->display_name }} {{ trans('message.user') }}</a></li>
-                <li><a href="{{ $menu->url }}b"><i class="fa fa-circle-o"></i> {{ $menu->display_name }} {{ trans('message.menu') }}</a></li>
-                <li><a href="{{ $menu->url }}c"><i class="fa fa-circle-o"></i> {{ $menu->display_name }} {{ trans('message.role') }}</a></li>
-                <li><a href="{{ $menu->url }}c"><i class="fa fa-circle-o"></i> {{ $menu->display_name }} {{ trans('message.permisos') }}</a></li>
-              </ul>
-            </li>
-            @else
               <li><a href="{{ $menu->url }}"><i class="{{ $menu->icons }}"></i> <span>{{ $menu->display_name }}</span></a></li>
-            @endif
         @endforeach
           <li><a href="profile"><i class="fa fa fa-user"></i> <span>Perfil</span></a></li>
     </ul>

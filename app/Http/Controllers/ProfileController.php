@@ -49,9 +49,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+      $resultados = DB::table('users')->select('id', 'name', 'email', 'city')->get();
+      return json_encode($resultados);
     }
 
     /**

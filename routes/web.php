@@ -45,4 +45,14 @@ Route::group(['middleware' => ['auth']], function() {
 
   Route::get('404', ['as' => '404', 'uses' => 'ErrorController@notfound']);
   Route::get('500', ['as' => '500', 'uses' => 'ErrorController@fatal']);
+
+  Route::post('/data_config', 'ProfileController@show');
+  Route::post('/data_edit_config', 'ConfigurationController@store');
+  Route::post('/data_menu_config', 'ConfigurationController@showMenu');
+  Route::post('/data_create_user_config', 'ConfigurationController@create');
+  Route::post('/data_edit_user_config', 'ConfigurationController@edit');
+
+  Route::post('/data_edit_priv_config', 'ConfigurationController@update_priv');
+  Route::post('/data_edit_menu_config', 'ConfigurationController@update_menu');
+  Route::post('/data_delete_config', 'ConfigurationController@destroy');
 });

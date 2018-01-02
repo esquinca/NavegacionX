@@ -32,25 +32,56 @@ class UsersTableSeeder extends Seeder
          $viewgeolocation = Permission::create(['name' => 'View geolocation']);
          $viewconsumption = Permission::create(['name' => 'View consumption']);
          $viewsurvey = Permission::create(['name' => 'View survey']);
-         $vieweditconfiguration = Permission::create(['name' => 'Edit Configuration']);
+         $viewcreatuserconfiguration = Permission::create(['name' => 'Create user']);
+         $viewedituserconfiguration = Permission::create(['name' => 'Edit user']);
+         $viewdeleteuserconfiguration = Permission::create(['name' => 'Delete user']);
          $viewconfiguration = Permission::create(['name' => 'View Configuration']);
+         $vieweditconfiguration = Permission::create(['name' => 'Edit Configuration']);
 
       //Asignamos el permiso view dashboard pral al role SuperAdmin
-         $role = Role::findByName('SuperAdmin');
-         $role->givePermissionTo('View dashboard pral');
-         $role->givePermissionTo('View geolocation');
-         $role->givePermissionTo('View consumption');
-         $role->givePermissionTo('View survey');
-         $role->givePermissionTo('Edit Configuration');
-         $role->givePermissionTo('View Configuration');
+        //  $role = Role::findByName('SuperAdmin');
+        //  $role->givePermissionTo('View dashboard pral');
+        //  $role->givePermissionTo('View geolocation');
+        //  $role->givePermissionTo('View consumption');
+        //  $role->givePermissionTo('View survey');
+        //  $role->givePermissionTo('Edit Configuration');
+        //  $role->givePermissionTo('View Configuration');
 
       //Creamos los usuarios super admin
+      $super_admin_a0 = new User;
+      $super_admin_a0->name='SuperAdmin';
+      $super_admin_a0->email='desarrollo@sitwifi.com';
+      $super_admin_a0->password= bcrypt('123456');
+      $super_admin_a0->save();
+      $super_admin_a0->assignRole($superadminRole);
+
+      $super_admin_a0->givePermissionTo('View dashboard pral');
+      $super_admin_a0->givePermissionTo('View geolocation');
+      $super_admin_a0->givePermissionTo('View consumption');
+      $super_admin_a0->givePermissionTo('View survey');
+      $super_admin_a0->givePermissionTo('Create user');
+      $super_admin_a0->givePermissionTo('Edit user');
+      $super_admin_a0->givePermissionTo('Delete user');
+      $super_admin_a0->givePermissionTo('Edit Configuration');
+      $super_admin_a0->givePermissionTo('View Configuration');
+
+      //
       $super_admin_a = new User;
       $super_admin_a->name='Alonso de Jesus Cauich Viana';
       $super_admin_a->email='acauich@sitwifi.com';
       $super_admin_a->password= bcrypt('123456');
       $super_admin_a->save();
       $super_admin_a->assignRole($superadminRole);
+
+      $super_admin_a->givePermissionTo('View dashboard pral');
+      $super_admin_a->givePermissionTo('View geolocation');
+      $super_admin_a->givePermissionTo('View consumption');
+      $super_admin_a->givePermissionTo('View survey');
+      $super_admin_a->givePermissionTo('Create user');
+      $super_admin_a->givePermissionTo('Edit user');
+      $super_admin_a->givePermissionTo('Delete user');
+      $super_admin_a->givePermissionTo('Edit Configuration');
+      $super_admin_a->givePermissionTo('View Configuration');
       //
       $super_admin_b = new User;
       $super_admin_b->name='Jose Antonio Esquinca Bonilla';
@@ -58,6 +89,14 @@ class UsersTableSeeder extends Seeder
       $super_admin_b->password= bcrypt('123456');
       $super_admin_b->save();
       $super_admin_b->assignRole($superadminRole);
+
+      $super_admin_b->givePermissionTo('View dashboard pral');
+      $super_admin_b->givePermissionTo('View geolocation');
+      $super_admin_b->givePermissionTo('View consumption');
+      $super_admin_b->givePermissionTo('View survey');
+      // $super_admin_b->givePermissionTo('Edit user');
+      // $super_admin_b->givePermissionTo('Edit Configuration');
+      $super_admin_b->givePermissionTo('View Configuration');
       //
       $super_admin_c = new User;
       $super_admin_c->name='Angel Gabriel Ramirez Ruiz';
@@ -65,6 +104,9 @@ class UsersTableSeeder extends Seeder
       $super_admin_c->password= bcrypt('123456');
       $super_admin_c->save();
       $super_admin_c->assignRole($superadminRole);
+
+      $super_admin_c->givePermissionTo('View geolocation');
+      $super_admin_c->givePermissionTo('View consumption');
       //Creamos los usuarios por default
       $user_default_a = new User;
       $user_default_a->name='Default Admin User';
@@ -95,13 +137,13 @@ class UsersTableSeeder extends Seeder
       $user_default_d->assignRole($monitorRole);
 
       //Creamos los menus predeterminados
-      $menuAdminA = new Menu;
-      $menuAdminA->name='dashboard';
-      $menuAdminA->display_name='Dashboard';
-      $menuAdminA->description='Es la representación gráfica y visual de las principales métricas.';
-      $menuAdminA->url='home';
-      $menuAdminA->icons='fa fa-tachometer';
-      $menuAdminA->save();
+      // $menuAdminA = new Menu;
+      // $menuAdminA->name='dashboard';
+      // $menuAdminA->display_name='Dashboard';
+      // $menuAdminA->description='Es la representación gráfica y visual de las principales métricas.';
+      // $menuAdminA->url='home';
+      // $menuAdminA->icons='fa fa-tachometer';
+      // $menuAdminA->save();
       //$assigned_menu_a = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminA->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
 
       $menuAdminB = new Menu;
@@ -111,9 +153,9 @@ class UsersTableSeeder extends Seeder
       $menuAdminB->url='geolocation';
       $menuAdminB->icons='fa fa-map-marker';
       $menuAdminB->save();
-      $assigned_menu_b = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id ,'menu_id' => $menuAdminB->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
-      $assigned_menu_b1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id ,'menu_id' => $menuAdminB->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
-      $assigned_menu_b2 = DB::table('menu_user')->insert(['user_id' => $super_admin_c->id ,'menu_id' => $menuAdminB->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+      $assigned_menu_b = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id ,'menu_id' => $menuAdminB->id]);
+      $assigned_menu_b1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id ,'menu_id' => $menuAdminB->id]);
+      $assigned_menu_b2 = DB::table('menu_user')->insert(['user_id' => $super_admin_c->id ,'menu_id' => $menuAdminB->id]);
 
       $menuAdminC = new Menu;
       $menuAdminC->name='data_consumption';
@@ -122,9 +164,9 @@ class UsersTableSeeder extends Seeder
       $menuAdminC->url='data_consumption';
       $menuAdminC->icons='fa fa-exchange';
       $menuAdminC->save();
-      $assigned_menu_c = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminC->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
-      $assigned_menu_c1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id,'menu_id' => $menuAdminC->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
-      $assigned_menu_c2 = DB::table('menu_user')->insert(['user_id' => $super_admin_c->id,'menu_id' => $menuAdminC->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+      $assigned_menu_c = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminC->id]);
+      $assigned_menu_c1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id,'menu_id' => $menuAdminC->id]);
+      $assigned_menu_c2 = DB::table('menu_user')->insert(['user_id' => $super_admin_c->id,'menu_id' => $menuAdminC->id]);
 
       $menuAdminD = new Menu;
       $menuAdminD->name='survey';
@@ -133,16 +175,16 @@ class UsersTableSeeder extends Seeder
       $menuAdminD->url='survey';
       $menuAdminD->icons='fa fa-folder';
       $menuAdminD->save();
-      $assigned_menu_d = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminD->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
-      $assigned_menu_d1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id,'menu_id' => $menuAdminD->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+      $assigned_menu_d = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminD->id]);
+      $assigned_menu_d1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id,'menu_id' => $menuAdminD->id]);
 
-      $menuAdminE = new Menu;
-      $menuAdminE->name='profile';
-      $menuAdminE->display_name='Perfil';
-      $menuAdminE->description='Es el conjunto de información que contiene su configuración.';
-      $menuAdminE->url='profile';
-      $menuAdminE->icons='fa fa-user';
-      $menuAdminE->save();
+      // $menuAdminE = new Menu;
+      // $menuAdminE->name='profile';
+      // $menuAdminE->display_name='Perfil';
+      // $menuAdminE->description='Es el conjunto de información que contiene su configuración.';
+      // $menuAdminE->url='profile';
+      // $menuAdminE->icons='fa fa-user';
+      // $menuAdminE->save();
       // $assigned_menu_e = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminE->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
 
       $menuAdminF = new Menu;
@@ -152,8 +194,8 @@ class UsersTableSeeder extends Seeder
       $menuAdminF->url='Configuration';
       $menuAdminF->icons='fa fa-cog';
       $menuAdminF->save();
-      $assigned_menu_f = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminF->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
-      $assigned_menu_f1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id,'menu_id' => $menuAdminF->id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+      $assigned_menu_f = DB::table('menu_user')->insert(['user_id' => $super_admin_a->id,'menu_id' => $menuAdminF->id]);
+      $assigned_menu_f1 = DB::table('menu_user')->insert(['user_id' => $super_admin_b->id,'menu_id' => $menuAdminF->id]);
 
 
     }

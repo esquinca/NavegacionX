@@ -77,7 +77,7 @@ class DataConsumptionController extends Controller
       $array = explode("-", $date_complete);
       $extraer_year = $array[0];
       $extraer_mes = $array[1];
-      $resultados = DB::connection('autobuses')->select('CALL TablaConsumoDown(?,?)', array($extraer_year,$extraer_mes));
+      $resultados = DB::connection('autobuses')->select('CALL TablaConsumoDown_copy(?,?)', array($extraer_year,$extraer_mes));
       return json_encode($resultados);
     }
     public function show_month_down(Request $request)
