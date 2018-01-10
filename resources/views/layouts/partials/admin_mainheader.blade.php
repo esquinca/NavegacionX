@@ -20,10 +20,10 @@
       <span class="sr-only">Toggle navigation</span>
     </a>
     <!-- Navbar Right Menu -->
-    <div class="navbar-custom-menu">
+    <div class="navbar-custom-menu" >
       <ul class="nav navbar-nav">
         <!-- Messages: style can be found in dropdown.less-->
-        <li class="dropdown messages-menu">
+        <li class="dropdown messages-menu" style="visibility: hidden;">
           <!-- Menu toggle button -->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-envelope-o"></i>
@@ -63,7 +63,7 @@
         <!-- /.messages-menu -->
 
         <!-- Notifications Menu -->
-        <li class="dropdown notifications-menu">
+        <li class="dropdown notifications-menu" style="visibility: hidden;">
           <!-- Menu toggle button -->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-bell-o"></i>
@@ -86,7 +86,7 @@
           </ul>
         </li>
         <!-- Tasks Menu -->
-        <li class="dropdown tasks-menu">
+        <li class="dropdown tasks-menu" style="visibility: hidden;">
           <!-- Menu Toggle Button -->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-flag-o"></i>
@@ -160,7 +160,7 @@
               </p>
             </li>
             <!-- Menu Body -->
-            <li class="user-body">
+            <!-- <li class="user-body" style="visibility: hidden;">
               <div class="row">
                 <div class="col-xs-4 text-center">
                   <a href="#">Followers</a>
@@ -171,13 +171,13 @@
                 <div class="col-xs-4 text-center">
                   <a href="#">Friends</a>
                 </div>
-              </div>
+              </div> -->
               <!-- /.row -->
-            </li>
+            <!-- </li> -->
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <a href="profile" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
                 <a class="btn btn-default btn-flat"  href="{{ route('logout') }}"
@@ -194,9 +194,9 @@
         {{ csrf_field() }}
         </form>
 
-        <li>
+        <!-- <li>
           <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </nav>
