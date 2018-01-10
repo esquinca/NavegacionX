@@ -214,7 +214,7 @@
                     </table>
                   </div>
                 </div>
-              </div><!----->
+              </div>
             </div>
           </div>
         </div>
@@ -276,5 +276,6 @@
 @endsection
 
 @push('scripts')
+<script src="{{ asset('/plugins/momentupdate/moment-with-locales.js')}}"></script>
 <script src="{{ asset('js/admin/consumption.js')}}"></script>
 @endpush

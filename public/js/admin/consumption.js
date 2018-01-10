@@ -1,10 +1,37 @@
 $(function () {
- $('.datepickermonth').datepicker({ language: 'es', format: "yyyy-mm", viewMode: "months", minViewMode: "months", autoclose: true, clearBtn: true });
- $('.datepickermonth').val('').datepicker('update');
- $(":button").css('opacity', '0.5');
+  var mesyearnow = moment().format("2017-09");
+  var yearnow = moment().format("2017-09-01");
+  $('.datepickermonth').datepicker({ language: 'es', format: "yyyy-mm", viewMode: "months", minViewMode: "months", autoclose: true, clearBtn: true });
+  $('.datepickermonth').val('').datepicker('update');
+  $(":button").css('opacity', '0.5');
 
- $('.datepickermonthcomplet').datepicker({ language: 'es', format: "yyyy-mm-dd", autoclose: true, clearBtn: true });
- $('.datepickermonthcomplet').val('').datepicker('update');
+  $('.datepickermonthcomplet').datepicker({ language: 'es', format: "yyyy-mm-dd", autoclose: true, clearBtn: true });
+  $('.datepickermonthcomplet').val('').datepicker('update');
+
+
+  $('#date_search_unity_month').val(mesyearnow);
+  $('#date_search_unity_month').children().val(mesyearnow);
+
+  $('#date_search_top_month').val(mesyearnow);
+  $('#date_search_top_month').children().val(mesyearnow);
+
+  $('#date_search_up_for_month').val(mesyearnow);
+  $('#date_search_up_for_month').children().val(mesyearnow);
+
+  $('#date_search_down_for_month').val(mesyearnow);
+  $('#date_search_down_for_month').children().val(mesyearnow);
+
+  $('#date_search_top_days').val(yearnow);
+  $('#date_search_top_days').children().val(yearnow);
+
+  $('#selunidad').val('3');
+  graph_consumos_max_min();
+  graph_consumos_top();
+  graph_consumption_day();
+
+  graph_consumos_up();
+  graph_consumos_down()
+
 });
 
 $(".btnconsumptionunity").on("click", function () {

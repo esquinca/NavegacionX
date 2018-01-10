@@ -1,8 +1,18 @@
 $(function () {
+ var mesyearnow = moment().format("2017-09");
  $('.datepickermonth').datepicker({ language: 'es', format: "yyyy-mm", viewMode: "months", minViewMode: "months", autoclose: true, clearBtn: true });
  $('.datepickermonth').val('').datepicker('update');
  $(":button").css('opacity', '0.5');
  automultiselect('selectgraphs');
+
+ $('#date_search_pral').val(mesyearnow);
+ $('#date_search_pral').children().val(mesyearnow);
+
+ graph_survey_nationality();
+ graph_survey_age();
+ graph_survey_domain();
+ graph_survey_tours();
+
 });
 
 function automultiselect(campo){

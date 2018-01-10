@@ -165,6 +165,7 @@
 @push('scripts')
 <link href="{{ asset('/plugins/bootstrap-multiselect-master/css/bootstrap-multiselect.css') }}" rel="stylesheet" type="text/css" />
 <script src="{{ asset('/plugins/bootstrap-multiselect-master/js/bootstrap-multiselect.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/plugins/momentupdate/moment-with-locales.js')}}"></script>
 <script src="{{ asset('js/admin/survey.js')}}"></script>
 
 @endpush
